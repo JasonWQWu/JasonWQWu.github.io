@@ -23,21 +23,19 @@
             <p><span class="age"></span></p>
             <p><span class="bio"></span></p>
             <p><span class="pronouns"></span></p>
-        </center>
-        <h4>Hardcoded IDs</h4>
-                <p>JZbU8EL0KHQYqG58Q8g3OePZPoY2</p>
-                <p>YzZe1bxjonYv4Nt7ZnMmcSCMhOe2</p>
-        <input
-                class="id_input"
-                type="text"
-                placeholder="Enter ID"
-            />
+            <h4>Hardcoded IDs</h4>
+            <p>JZbU8EL0KHQYqG58Q8g3OePZPoY2</p>
+            <p>YzZe1bxjonYv4Nt7ZnMmcSCMhOe2</p>
+            <input class="id_input" type="text" placeholder="Enter ID" />
             <button class="search_button">Search</button>
+        </center>
 
-        <iframes
-                src="https://thunkable.site/w/hmLa1PjxaNzJ5EsJ9rKJ9"
-                title="Jasongram ProfileApp"
-            ></iframe>
+        <iframe
+            src="https://thunkable.site/w/hmLa1PjxaNzJ5EsJ9rKJ9"
+            title="Jasongram ProfileApp"
+            ;
+            style="height: 750px; width: 25%; float: bottom"
+        ></iframe>
 
         <script type="module">
             // Import the functions you need from the SDKs you need
@@ -47,7 +45,8 @@
             const firebaseConfig = {
                 apiKey: "AIzaSyAqv40SimSz3RsOpkRts4lthyKLsBKDOyQ",
                 authDomain: "profileapp-72019.firebaseapp.com",
-                databaseURL: "https://profileapp-72019-default-rtdb.firebaseio.com",
+                databaseURL:
+                    "https://profileapp-72019-default-rtdb.firebaseio.com",
                 projectId: "profileapp-72019",
                 storageBucket: "profileapp-72019.appspot.com",
                 messagingSenderId: "100764384447",
@@ -57,8 +56,15 @@
             //Initialize Firebase
             const app = initializeApp(firebaseConfig);
 
-            import {getDatabase, ref, get, set, child, update, remove} 
-            from "https://www.gstatic.com/firebasejs/10.4.0/firebase-database.js";
+            import {
+                getDatabase,
+                ref,
+                get,
+                set,
+                child,
+                update,
+                remove,
+            } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-database.js";
 
             const db = getDatabase();
 
@@ -67,7 +73,7 @@
             var userBio = document.querySelector(".bio");
             var userPronouns = document.querySelector(".pronouns");
             var userImage = document.querySelector(".image");
-            var userInputID = document.querySelector(".id_input")
+            var userInputID = document.querySelector(".id_input");
             var userSearchButton = document.querySelector(".search_button");
 
             function FindData() {
@@ -79,7 +85,8 @@
                             userName.innerHTML = "Name: " + snapshot.val().name;
                             userBio.innerHTML = "Bio: " + snapshot.val().bio;
                             userAge.innerHTML = "Age: " + snapshot.val().age;
-                            userPronouns.innerHTML = "Pronouns: " + snapshot.val().pronouns;
+                            userPronouns.innerHTML =
+                                "Pronouns: " + snapshot.val().pronouns;
                             userImage.src = snapshot.val().image;
                         } else {
                             alert("No data found");
